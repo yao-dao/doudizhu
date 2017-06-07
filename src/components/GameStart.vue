@@ -8,20 +8,20 @@
 
        <el-row>
             <el-col :span="8" style="border:1px solid #99a9bf;padding:21px">
-            <el-form ref="form">
+            <el-form ref="form" name='loginForm'>
                 <el-form-item style='text-align: center;margin:0px;'>
                     登录
                 </el-form-item>
                 <el-form-item label="email:">
-                  <el-input placeholder="请输入email"></el-input>
+                  <el-input placeholder="请输入email" name='email'></el-input>
                 </el-form-item>
                 <el-form-item label="password:">
-                  <el-input placeholder="请输入密码"></el-input>
+                  <el-input placeholder="请输入密码" type="password" name='pwd'></el-input>
                 </el-form-item>
                 <el-form-item>
-                  <el-button type="primary" @click="onSubmit">登录</el-button>
+                  <el-button type="primary" @click="login">登录</el-button>
                   <router-link to="/register">
-                  <el-button @click="onRegist">注册</el-button>
+                  <el-button >注册</el-button>
                   </router-link>
                 </el-form-item>
             </el-form>
@@ -35,13 +35,19 @@
 </div>
 </template>
 <script>
+import {login} from '../vuex/actions/UserAction';
 
 	export default {
 	  data() {
 	    return {
 	      
 	    }
-	  }
+	  },
+	  methods:{
+	  	login:function(e){
+	  		login(loginForm,this);
+	  	}
+	  },
 	}
 </script>
 
