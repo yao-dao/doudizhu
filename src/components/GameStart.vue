@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="div1">
   <el-row>
 	 <el-col :span="24" style="margin-bottom:100px">欢迎来到斗地主</el-col>
   </el-row>
@@ -51,3 +51,11 @@ import {login} from '../vuex/actions/UserAction';
 	}
 </script>
 
+<style type="text/css">
+  .div1{
+    width:100%;
+    height: 96vh;
+    background-image:url("../assets/shouye.jpg"); 
+    background-size: cover;
+  }
+</style>

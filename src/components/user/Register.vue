@@ -26,12 +26,11 @@
 			</el-col>
 			<el-col :span="6">&nbsp;</el-col>
 	</el-row>
-		</div>
+	</div>
 </template>
 <script>
 import {zhuce} from '../../vuex/actions/UserAction'
 import {getZhuce} from '../../vuex/getters/UserGetter'
-
 export default {
 	data(){
 		return{
