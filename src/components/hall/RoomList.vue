@@ -38,7 +38,7 @@
 		      <template scope="scope">
 		        <el-button
 		          type="text"
-		          size="small">
+		          size="small" @click='enterRoom(roomList[scope.$index].room)'>
 		          进入
 		        </el-button>
 		      </template>
@@ -48,7 +48,7 @@
 	</div>
 </template>
 <script>
-import {newRoom,getRoomList} from '../../vuex/actions/HallAction'
+import {newRoom,getRoomList,enterRoom} from '../../vuex/actions/HallAction'
 let newVue =  {
   data(){
   	return {
@@ -69,6 +69,10 @@ let newVue =  {
   	newRoom:function(){
   		let formObj='roompwd='+newRoomForm.roompwd.value;
   		newRoom(formObj,this);
+  	},
+  	enterRoom:function(room){
+  		//alert(room);
+  		enterRoom(room,this);
   	}
   }
 }
